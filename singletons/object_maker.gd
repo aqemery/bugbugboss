@@ -48,4 +48,3 @@ func create_explosion(pos, duration:float, color):
     e._color = color
     call_add_child(e)
     
-    

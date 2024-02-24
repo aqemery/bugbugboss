@@ -27,4 +27,3 @@ func fly_circle(time, delay=0) -> Animator:
     move_by(Vector2(-30,-30), time/4, 2*time/4)
     move_by(Vector2(30,-30), time/4, 3*time/4)
     return self
-

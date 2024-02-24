@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwfb8gs0qj4mt"]
+
+[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://bugbugboss.png" id="1_hiffy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgpv8"]
+atlas = ExtResource("1_hiffy")
+region = Rect2(8, 8, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm1fy"]
+atlas = ExtResource("1_hiffy")
+region = Rect2(24, 8, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ytcum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgpv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm1fy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdq10"]
+radius = 7.0
+
+[node name="boss" type="Area2D"]
+collision_layer = 2
+collision_mask = 18
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ytcum")
+autoplay = "default"
+frame_progress = 0.248285
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_cdq10")
