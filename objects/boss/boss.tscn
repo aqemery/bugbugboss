@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwfb8gs0qj4mt"]
+[gd_scene load_steps=7 format=3 uid="uid://dwfb8gs0qj4mt"]
 
 [ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://bugbugboss.png" id="1_hiffy"]
+[ext_resource type="Script" path="res://objects/boss/boss.gd" id="1_mw1rr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fgpv8"]
 atlas = ExtResource("1_hiffy")
@@ -30,13 +31,16 @@ radius = 7.0
 [node name="boss" type="Area2D"]
 collision_layer = 2
 collision_mask = 18
+script = ExtResource("1_mw1rr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ytcum")
 autoplay = "default"
-frame_progress = 0.248285
+frame_progress = 0.985589
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cdq10")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

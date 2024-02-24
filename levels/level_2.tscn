@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxay0rtbwgdpn"]
+[gd_scene load_steps=3 format=3 uid="uid://dxay0rtbwgdpn"]
 
 [ext_resource type="PackedScene" uid="uid://bd658v5mtnrhf" path="res://objects/bug/bug.tscn" id="1_35ixx"]
+[ext_resource type="PackedScene" uid="uid://dwfb8gs0qj4mt" path="res://objects/boss/boss.tscn" id="2_0a48m"]
 
 [node name="level1" type="Node2D"]
 
@@ -39,3 +40,6 @@ position = Vector2(88, 8)
 
 [node name="bug12" parent="." instance=ExtResource("1_35ixx")]
 position = Vector2(88, 24)
+
+[node name="boss" parent="." instance=ExtResource("2_0a48m")]
+position = Vector2(64, 16)
