@@ -12,8 +12,5 @@ func _physics_process(delta):
     if _life_time > _life_span:
         queue_free()
 
-func set_direction(dir: Vector2):
-    _direction = dir
-
 func _on_area_entered(area):
     queue_free()

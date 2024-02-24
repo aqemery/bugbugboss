@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4kxnh"]
 radius = 4.0
 
-[node name="bug" type="Area2D"]
+[node name="bug" type="Area2D" groups=["bug"]]
 collision_layer = 2
 collision_mask = 16
 script = ExtResource("1_7o60m")

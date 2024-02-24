@@ -1,80 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3xhcie0alhov"]
 
-[ext_resource type="PackedScene" uid="uid://b0vivdya4suuf" path="res://objects/ship/ship.tscn" id="1_sfp24"]
-[ext_resource type="PackedScene" uid="uid://bd658v5mtnrhf" path="res://objects/bug/bug.tscn" id="2_liejl"]
-[ext_resource type="PackedScene" uid="uid://dnbfjq26nnbfd" path="res://objects/red_bug/red_bug.tscn" id="3_ufgo7"]
-[ext_resource type="PackedScene" uid="uid://dm0vlnoecn5iv" path="res://objects/yellow_bug/yellow_bug.tscn" id="4_bny5j"]
+[ext_resource type="Script" path="res://game.gd" id="1_gpc6s"]
+[ext_resource type="PackedScene" uid="uid://cod548cn8rfku" path="res://objects/stars/stars.tscn" id="2_3428j"]
+[ext_resource type="PackedScene" uid="uid://bse3ca1xapqu0" path="res://objects/lives/lives.tscn" id="3_c8o8c"]
+[ext_resource type="AudioStream" uid="uid://bbunhswhawwqp" path="res://sounds/die.wav" id="4_tnrkh"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_gpc6s")
 
-[node name="bug6" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(109, 6)
+[node name="stars" parent="." instance=ExtResource("2_3428j")]
 
-[node name="ship" parent="." instance=ExtResource("1_sfp24")]
-position = Vector2(64, 124)
+[node name="lives" parent="." instance=ExtResource("3_c8o8c")]
 
-[node name="bug" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(89, 7)
-
-[node name="bug2" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(100, 5)
-
-[node name="bug3" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(6, 20)
-
-[node name="bug4" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(29, 20)
-
-[node name="bug5" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(118, 6)
-
-[node name="bug7" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(112, 15)
-
-[node name="bug8" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(5, 6)
-
-[node name="bug9" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(61, 5)
-
-[node name="bug10" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(17, 7)
-
-[node name="bug11" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(31, 10)
-
-[node name="bug12" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(69, 17)
-
-[node name="bug13" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(51, 8)
-
-[node name="bug14" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(34, 29)
-
-[node name="bug15" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(71, 7)
-
-[node name="bug16" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(41, 9)
-
-[node name="bug17" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(106, 25)
-
-[node name="bug18" parent="." instance=ExtResource("2_liejl")]
-position = Vector2(54, 20)
-
-[node name="red_bug" parent="." instance=ExtResource("3_ufgo7")]
-position = Vector2(21, 28)
-
-[node name="red_bug2" parent="." instance=ExtResource("3_ufgo7")]
-position = Vector2(122, 15)
-
-[node name="yellow_bug" parent="." instance=ExtResource("4_bny5j")]
-position = Vector2(99, 15)
-
-[node name="yellow_bug2" parent="." instance=ExtResource("4_bny5j")]
-position = Vector2(42, 20)
-
-[node name="yellow_bug3" parent="." instance=ExtResource("4_bny5j")]
-position = Vector2(16, 19)
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tnrkh")

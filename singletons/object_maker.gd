@@ -2,6 +2,8 @@ extends Node
 
 const BULLET = preload("res://objects/bullet/bullet.tscn")
 const SLIME = preload("res://objects/slime/slime.tscn")
+const PLASMA = preload("res://objects/plasma/plasma.tscn")
+const SLIME_BALL = preload("res://objects/slime_ball/slime_ball.tscn")
 const SPLAT = preload("res://objects/splat/splat.tscn")
 const EXPLODE = preload("res://objects/explode/explode.tscn")
 
@@ -21,12 +23,23 @@ func create_splat(pos):
     s.global_position = pos
     call_add_child(s)
     
-func create_slime(pos):
+func create_slime(pos, dir=Vector2.DOWN):
     var b = SLIME.instantiate()
     b.global_position = pos
-    b.set_direction(Vector2.DOWN)
+    b._direction = dir
     call_add_child(b)
 
+func create_plasma(pos):
+    var b = PLASMA.instantiate()
+    b.global_position = pos
+    b._direction = Vector2.DOWN
+    call_add_child(b)
+    
+func create_slime_ball(pos, dir=Vector2.DOWN):
+    var b = SLIME_BALL.instantiate()
+    b.global_position = pos
+    b._direction = dir
+    call_add_child(b)
 
 func create_explosion(pos, duration:float, color):
     var e = EXPLODE.instantiate()

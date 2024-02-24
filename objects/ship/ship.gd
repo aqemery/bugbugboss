@@ -5,6 +5,7 @@ const COOLDOWN = 0.25
 var _cool:float = 0
 var _can_fire: bool = true
 
+
 func _physics_process(delta):
     var move = Input.get_axis("ui_left", "ui_right")
     position.x += move * SPEED * delta
@@ -25,4 +26,6 @@ func fire():
 func _on_area_entered(area):
     ObjectMaker.create_explosion(position, 0.15, Color.WHITE)
     ObjectMaker.create_explosion(position, 0.1, Color.YELLOW)
+    
     queue_free()
+

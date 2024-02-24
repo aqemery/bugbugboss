@@ -16,7 +16,13 @@ func _on_area_entered(area):
     
 func fire():
     if _cool <= 0:
-        ObjectMaker.create_slime(global_position)
+        if randf() > 0.6:
+            fire_bullet()
         _cool = COOLDOWN
+        
+func fire_bullet():
+    ObjectMaker.create_slime(global_position)
+
+
 
 

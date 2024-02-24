@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxay0rtbwgdpn"]
+
+[ext_resource type="PackedScene" uid="uid://bd658v5mtnrhf" path="res://objects/bug/bug.tscn" id="1_35ixx"]
+
+[node name="level1" type="Node2D"]
+
+[node name="bug" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(8, 8)
+
+[node name="bug2" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(8, 24)
+
+[node name="bug3" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(24, 8)
+
+[node name="bug4" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(24, 24)
+
+[node name="bug5" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(120, 8)
+
+[node name="bug6" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(40, 24)
+
+[node name="bug7" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(40, 8)
+
+[node name="bug8" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(104, 8)
+
+[node name="bug9" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(104, 24)
+
+[node name="bug10" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(120, 24)
+
+[node name="bug11" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(88, 8)
+
+[node name="bug12" parent="." instance=ExtResource("1_35ixx")]
+position = Vector2(88, 24)

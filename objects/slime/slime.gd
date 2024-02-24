@@ -1,5 +1,4 @@
 extends Bullet
 
 func _ready():
-    _speed = 50.0
-
+    _speed = 100.0
