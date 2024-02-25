@@ -1,11 +1,11 @@
 extends Node
 
-const BULLET = preload("res://objects/bullet/bullet.tscn")
-const SLIME = preload("res://objects/slime/slime.tscn")
-const PLASMA = preload("res://objects/plasma/plasma.tscn")
-const SLIME_BALL = preload("res://objects/slime_ball/slime_ball.tscn")
-const SPLAT = preload("res://objects/splat/splat.tscn")
-const EXPLODE = preload("res://objects/explode/explode.tscn")
+const BULLET = preload ("res://objects/bullet/bullet.tscn")
+const SLIME = preload ("res://objects/slime/slime.tscn")
+const PLASMA = preload ("res://objects/plasma/plasma.tscn")
+const SLIME_BALL = preload ("res://objects/slime_ball/slime_ball.tscn")
+const SPLAT = preload ("res://objects/splat/splat.tscn")
+const EXPLODE = preload ("res://objects/explode/explode.tscn")
 
 func add_deferred(scene):
     get_tree().root.add_child(scene)
@@ -41,10 +41,9 @@ func create_slime_ball(pos, dir=Vector2.DOWN):
     b._direction = dir
     call_add_child(b)
 
-func create_explosion(pos, duration:float, color):
+func create_explosion(pos, duration: float, color):
     var e = EXPLODE.instantiate()
     e.global_position = pos
     e._duration = duration
     e._color = color
     call_add_child(e)
-    

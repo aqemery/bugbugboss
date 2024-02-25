@@ -3,7 +3,7 @@ extends Node2D
 var _stars = []
 var _color = Color(0.11, 0.17, 0.33)
 
-func  _ready():
+func _ready():
     for i in range(30):
         var s = {}
         s.x = randi_range(0, 127)
@@ -17,16 +17,14 @@ func  _ready():
             s.col = 7
         _stars.append(s)
 
-
-func _process(delta):	
+func _process(_delta):
     for s in _stars:
-        s.y+=s.dy
+        s.y += s.dy
         if s.y > 127:
-            s.y=-10
-            s.x=randi_range(0, 127)
+            s.y = -10
+            s.x = randi_range(0, 127)
     queue_redraw()
 
-    #1D2B53
 func _draw():
     for s in _stars:
         var sy2 = s.y + s.dy * 12

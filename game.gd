@@ -18,17 +18,23 @@ func _ready():
     SignalManager.enemy_dies.connect(check_level_complete)
     SignalManager.ship_dies.connect(player_died)
 
-
 func player_died():
     audio.play()
+    camera.shake(10, 0.5, 100)
     if _lives:
-        _lives -= 1
-        await get_tree().create_timer(1).timeout
-        start_level()
-        spawn_ship()
-    
+        respawn_ship()
+    else:
+        wave_label.visible = true
+        wave_label.set_text("game over")
+        
+func respawn_ship():
+    _lives -= 1
+    await get_tree().create_timer(1).timeout
+    start_level()
+    spawn_ship()
+
 func check_level_complete():
-    print('check')
+    camera.shake(4, 0.5, 50)
     var bugs = len(get_tree().get_nodes_in_group("bug"))
     print(bugs)
     if bugs == 1:

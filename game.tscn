@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3xhcie0alhov"]
+[gd_scene load_steps=7 format=3 uid="uid://d3xhcie0alhov"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_gpc6s"]
 [ext_resource type="PackedScene" uid="uid://cod548cn8rfku" path="res://objects/stars/stars.tscn" id="2_3428j"]
 [ext_resource type="PackedScene" uid="uid://bse3ca1xapqu0" path="res://objects/lives/lives.tscn" id="3_c8o8c"]
 [ext_resource type="AudioStream" uid="uid://bbunhswhawwqp" path="res://sounds/die.wav" id="4_tnrkh"]
 [ext_resource type="PackedScene" uid="uid://ditaic0utel4p" path="res://objects/wave_label/wave_label.tscn" id="5_21ko4"]
+[ext_resource type="PackedScene" uid="uid://x48wm0epe2xi" path="res://objects/camera/camera.tscn" id="6_bw02k"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gpc6s")
@@ -21,5 +22,4 @@ visible = false
 offset_right = 128.0
 offset_bottom = 128.0
 
-[node name="camera" type="Camera2D" parent="."]
-offset = Vector2(64, 64)
+[node name="camera" parent="." instance=ExtResource("6_bw02k")]

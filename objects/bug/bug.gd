@@ -2,7 +2,7 @@ extends Area2D
 class_name Bug
 
 const COOLDOWN = 1
-var _cool:float = 0
+var _cool: float = 0
 var _can_fire: bool = false
 
 func _ready():
@@ -15,7 +15,7 @@ func _process(delta):
 func enable_fire():
     _can_fire = true
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
     ObjectMaker.create_splat(global_position)
     ObjectMaker.create_explosion(position, 0.1, Color.GREEN)
     queue_free()
@@ -29,8 +29,3 @@ func fire():
         
 func fire_bullet():
     ObjectMaker.create_slime(global_position)
-
-
-
-
-
