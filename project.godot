@@ -24,7 +24,8 @@ animator="*res://singletons/animator.gd"
 
 window/size/viewport_width=128
 window/size/viewport_height=128
-window/size/mode=2
+window/size/window_width_override=800
+window/size/window_height_override=800
 window/stretch/mode="canvas_items"
 
 [rendering]

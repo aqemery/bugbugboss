@@ -18,6 +18,10 @@ func _on_area_entered(_area):
         ObjectMaker.create_splat(global_position + Vector2(-4,-4))
         ObjectMaker.create_splat(global_position + Vector2(4,4))
         ObjectMaker.create_splat(global_position + Vector2(-4,4))
+        ObjectMaker.create_explosion(position + Vector2(4,-4), 0.1, Color.GREEN)
+        ObjectMaker.create_explosion(position + Vector2(-4,-4), 0.1, Color.GREEN)
+        ObjectMaker.create_explosion(position + Vector2(4,4), 0.1, Color.GREEN)
+        ObjectMaker.create_explosion(position + Vector2(-4,4), 0.1, Color.GREEN)
         ObjectMaker.create_explosion(position, 0.1, Color.GREEN)
         queue_free()
     pass # Replace with function body.
