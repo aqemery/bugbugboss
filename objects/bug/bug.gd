@@ -7,6 +7,7 @@ var _can_fire: bool = false
 
 func _ready():
     SignalManager.begin_play.connect(enable_fire)
+    animate_intro()
 
 func _process(delta):
     _cool -= delta
@@ -29,3 +30,9 @@ func fire():
         
 func fire_bullet():
     ObjectMaker.create_slime(global_position)
+
+func animate_intro():
+    var end_pos = position
+    position += Vector2(0, -position.y - 10)
+    var t: Animator = animator.create(self)
+    t.fly(end_pos, 0.5)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1akyyypx8r22"]
+[gd_scene load_steps=4 format=3 uid="uid://bueadw1ju6vs2"]
 
 [ext_resource type="PackedScene" uid="uid://dnq2rnwqkoexd" path="res://levels/level_base.tscn" id="1_istah"]
 [ext_resource type="PackedScene" uid="uid://bd658v5mtnrhf" path="res://objects/bug/bug.tscn" id="1_m5a2e"]
+[ext_resource type="PackedScene" uid="uid://dnbfjq26nnbfd" path="res://objects/red_bug/red_bug.tscn" id="3_sts67"]
 
-[node name="level_1" instance=ExtResource("1_istah")]
+[node name="level_4" instance=ExtResource("1_istah")]
 
 [node name="bug" parent="." index="0" instance=ExtResource("1_m5a2e")]
 position = Vector2(104, 32)
@@ -20,8 +21,8 @@ position = Vector2(24, 32)
 [node name="bug5" parent="." index="4" instance=ExtResource("1_m5a2e")]
 position = Vector2(40, 48)
 
-[node name="bug6" parent="." index="5" instance=ExtResource("1_m5a2e")]
-position = Vector2(64, 32)
-
-[node name="bug7" parent="." index="6" instance=ExtResource("1_m5a2e")]
+[node name="bug7" parent="." index="5" instance=ExtResource("1_m5a2e")]
 position = Vector2(88, 48)
+
+[node name="red_bug" parent="." index="6" instance=ExtResource("3_sts67")]
+position = Vector2(64, 32)

@@ -6,10 +6,8 @@ var _cool: float = 0
 var _can_fire: bool = false
 
 func _ready():
-    SignalManager.begin_play.connect(enable_fire)
-
-func enable_fire():
-    _can_fire = true
+    SignalManager.begin_play.connect(func(): _can_fire = true)
+    SignalManager.level_complete.connect(func(): _can_fire = false)
 
 func _physics_process(delta):
     var move = Input.get_axis("ui_left", "ui_right")

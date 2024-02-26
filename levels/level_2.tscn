@@ -1,45 +1,42 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxay0rtbwgdpn"]
 
 [ext_resource type="PackedScene" uid="uid://bd658v5mtnrhf" path="res://objects/bug/bug.tscn" id="1_35ixx"]
-[ext_resource type="PackedScene" uid="uid://dwfb8gs0qj4mt" path="res://objects/boss/boss.tscn" id="2_0a48m"]
+[ext_resource type="PackedScene" uid="uid://dnq2rnwqkoexd" path="res://levels/level_base.tscn" id="1_bqxsa"]
 
-[node name="level1" type="Node2D"]
+[node name="level_2" instance=ExtResource("1_bqxsa")]
 
-[node name="bug" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(8, 8)
+[node name="bug" parent="." index="0" instance=ExtResource("1_35ixx")]
+position = Vector2(8, 16)
 
-[node name="bug2" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(8, 24)
+[node name="bug2" parent="." index="1" instance=ExtResource("1_35ixx")]
+position = Vector2(8, 36)
 
-[node name="bug3" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(24, 8)
+[node name="bug3" parent="." index="2" instance=ExtResource("1_35ixx")]
+position = Vector2(28, 16)
 
-[node name="bug4" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(24, 24)
+[node name="bug4" parent="." index="3" instance=ExtResource("1_35ixx")]
+position = Vector2(28, 36)
 
-[node name="bug5" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(120, 8)
+[node name="bug5" parent="." index="4" instance=ExtResource("1_35ixx")]
+position = Vector2(120, 16)
 
-[node name="bug6" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(40, 24)
+[node name="bug6" parent="." index="5" instance=ExtResource("1_35ixx")]
+position = Vector2(48, 36)
 
-[node name="bug7" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(40, 8)
+[node name="bug7" parent="." index="6" instance=ExtResource("1_35ixx")]
+position = Vector2(48, 16)
 
-[node name="bug8" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(104, 8)
+[node name="bug8" parent="." index="7" instance=ExtResource("1_35ixx")]
+position = Vector2(100, 16)
 
-[node name="bug9" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(104, 24)
+[node name="bug9" parent="." index="8" instance=ExtResource("1_35ixx")]
+position = Vector2(100, 36)
 
-[node name="bug10" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(120, 24)
+[node name="bug10" parent="." index="9" instance=ExtResource("1_35ixx")]
+position = Vector2(120, 36)
 
-[node name="bug11" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(88, 8)
+[node name="bug11" parent="." index="10" instance=ExtResource("1_35ixx")]
+position = Vector2(80, 16)
 
-[node name="bug12" parent="." instance=ExtResource("1_35ixx")]
-position = Vector2(88, 24)
-
-[node name="boss" parent="." instance=ExtResource("2_0a48m")]
-position = Vector2(64, 16)
+[node name="bug12" parent="." index="11" instance=ExtResource("1_35ixx")]
+position = Vector2(80, 36)

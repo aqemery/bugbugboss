@@ -4,7 +4,7 @@ var _stars = []
 var _color = Color(0.11, 0.17, 0.33)
 
 func _ready():
-    for i in range(30):
+    for i in range(40):
         var s = {}
         s.x = randi_range(0, 127)
         s.y = randi_range(0, 127)
@@ -21,7 +21,7 @@ func _process(_delta):
     for s in _stars:
         s.y += s.dy
         if s.y > 127:
-            s.y = -10
+            s.y = -15
             s.x = randi_range(0, 127)
     queue_redraw()
 

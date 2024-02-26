@@ -23,11 +23,12 @@ func create_splat(pos):
     s.global_position = pos
     call_add_child(s)
     
-func create_slime(pos, dir=Vector2.DOWN):
+func create_slime(pos, dir=Vector2.DOWN, speed=100.0):
     var b = SLIME.instantiate()
     b.global_position = pos
     b._direction = dir
     call_add_child(b)
+    b._speed = speed
 
 func create_plasma(pos):
     var b = PLASMA.instantiate()

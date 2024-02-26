@@ -10,6 +10,6 @@ func _ready():
 func _physics_process(delta):
     super._physics_process(delta)
     if _life_time > _life_span:
-        ObjectMaker.create_slime(global_position, Vector2(.4, 1))
-        ObjectMaker.create_slime(global_position, Vector2( - .4, 1))
-        ObjectMaker.create_slime(global_position)
+        ObjectMaker.create_slime(global_position, Vector2(0.15, 1), 50)
+        ObjectMaker.create_slime(global_position, Vector2( - 0.15, 1), 50)
+        ObjectMaker.create_slime(global_position, Vector2.DOWN)

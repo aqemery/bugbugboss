@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnq2rnwqkoexd"]
+
+[ext_resource type="Script" path="res://levels/level_base.gd" id="1_knfqc"]
+
+[node name="level_base" type="Node2D"]
+script = ExtResource("1_knfqc")
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

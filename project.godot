@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.2", "Mobile")
 SignalManager="*res://singletons/signal_manager.gd"
 ObjectMaker="*res://singletons/object_maker.gd"
 animator="*res://singletons/animator.gd"
+LevelBase="*res://levels/level_base.gd"
 
 [display]
 

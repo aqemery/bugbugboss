@@ -17,6 +17,7 @@ func _ready():
     start_level()
     SignalManager.enemy_dies.connect(check_level_complete)
     SignalManager.ship_dies.connect(player_died)
+    SignalManager.level_complete.connect(complete_level)
 
 func player_died():
     audio.play()
@@ -35,10 +36,6 @@ func respawn_ship():
 
 func check_level_complete():
     camera.shake(4, 0.5, 50)
-    var bugs = len(get_tree().get_nodes_in_group("bug"))
-    print(bugs)
-    if bugs == 1:
-        complete_level()
     
 func start_level():
     if _level:
@@ -48,11 +45,13 @@ func start_level():
     var level_string = "res://levels/level_%s.tscn" % _current_level
     _level = load(level_string).instantiate()
     wave_label.set_text("wave %d" % _current_level)
-    
+
+    await get_tree().create_timer(1).timeout    
+    wave_label.visible = false
     add_child(_level)
+    
     await get_tree().create_timer(1).timeout
     SignalManager.begin_play.emit()
-    wave_label.visible = false
 
 func spawn_ship():
     _ship = ship_scene.instantiate()
@@ -65,3 +64,4 @@ func complete_level():
     _current_level += 1
     await get_tree().create_timer(1).timeout
     start_level()
+    
