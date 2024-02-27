@@ -5,5 +5,4 @@ func _ready():
     play(animation_name)
 
 func _on_animation_finished():
-    #queue_free()
-    call_deferred("queue_free")
+    queue_free()

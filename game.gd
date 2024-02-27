@@ -40,6 +40,9 @@ func check_level_complete():
 func start_level():
     if _level:
         _level.queue_free()
+        remove_bullets()
+        
+        
     _level_complete = false
     wave_label.visible = true
     var level_string = "res://levels/level_%s.tscn" % _current_level
@@ -52,6 +55,10 @@ func start_level():
     
     await get_tree().create_timer(1).timeout
     SignalManager.begin_play.emit()
+
+func remove_bullets():
+    get_tree().call_group('bullet', 'queue_free')
+
 
 func spawn_ship():
     _ship = ship_scene.instantiate()
