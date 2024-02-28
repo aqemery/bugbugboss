@@ -1,6 +1,7 @@
 extends Area2D
 
 var health = 20
+var last_called
 # Called when the node enters the scene tree for the first time.
 @onready var _animator = animator.create(self)
 
@@ -16,7 +17,11 @@ func animate_intro():
 func start_loop():
     var options: Array[Callable] = [move_right, move_left, move_center, fire_slime]
     var next_op: Callable = options.pick_random()
-    next_op.call()
+    if next_op != last_called:
+        last_called = next_op
+        next_op.call()
+    else:
+        start_loop()
     
 func move_right():
     _animator = animator.create(self)
