@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dff4obwv41x2e"]
+
+[ext_resource type="PackedScene" uid="uid://dwfb8gs0qj4mt" path="res://objects/boss/boss.tscn" id="1_j2ba4"]
+[ext_resource type="Script" path="res://levels/level_boss.gd" id="1_j77we"]
+
+[node name="level_boss" type="Node2D"]
+script = ExtResource("1_j77we")
+
+[node name="boss" parent="." instance=ExtResource("1_j2ba4")]
+position = Vector2(96, 160)

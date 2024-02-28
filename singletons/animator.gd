@@ -24,3 +24,7 @@ func fly_circle(time) -> Animator:
     move_by(Vector2( - 30, -30), time / 4, 2 * time / 4)
     move_by(Vector2(30, -30), time / 4, 3 * time / 4)
     return self
+
+func callback(fuc_name:Callable, delay:float = 0) -> Animator:
+    _tween.tween_callback(fuc_name).set_delay(delay)
+    return self
