@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0vivdya4suuf"]
+[gd_scene load_steps=8 format=3 uid="uid://b0vivdya4suuf"]
 
 [ext_resource type="Script" path="res://objects/ship/ship.gd" id="1_fj8p4"]
 [ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://bugbugboss.png" id="1_i53kt"]
+[ext_resource type="AudioStream" uid="uid://bh2srgfyoo8fe" path="res://sounds/ship_shoot.wav" id="3_5vuex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7eo8"]
 atlas = ExtResource("1_i53kt")
@@ -43,6 +44,9 @@ frame_progress = 0.803142
 position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_cixfj")
 one_way_collision_margin = 0.0
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5vuex")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="tree_exiting" from="CollisionShape2D" to="." method="_on_collision_shape_2d_tree_exiting"]

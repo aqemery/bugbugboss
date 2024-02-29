@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7en5nykanx4j"]
+[gd_scene load_steps=7 format=3 uid="uid://b7en5nykanx4j"]
 
 [ext_resource type="PackedScene" uid="uid://duuhjxcqvwafp" path="res://objects/slime/slime.tscn" id="1_nuhf5"]
 [ext_resource type="Script" path="res://objects/slime_ball/slime_ball.gd" id="2_hcs78"]
+[ext_resource type="AudioStream" uid="uid://bayfxf3hox6uf" path="res://sounds/slime_ball_explode.wav" id="3_0ip5j"]
 
 [sub_resource type="Animation" id="Animation_8ore7"]
 length = 0.001
@@ -53,3 +54,8 @@ libraries = {
 "": SubResource("AnimationLibrary_xni2y")
 }
 autoplay = "pulse"
+
+[node name="ball_explode" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_0ip5j")
+
+[connection signal="finished" from="ball_explode" to="." method="_on_ball_explode_finished"]

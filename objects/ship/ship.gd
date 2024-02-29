@@ -1,9 +1,10 @@
 extends Area2D
 
 const SPEED = 50
-const COOLDOWN = 0.25
+const COOLDOWN = 0.35
 var _cool: float = 0
 var _can_fire: bool = false
+@onready var shoot = $shoot
 
 func _ready():
     SignalManager.begin_play.connect(func(): _can_fire = true)
@@ -22,6 +23,7 @@ func keep_onscreen():
 
 func fire():
     if _can_fire and _cool <= 0:
+        shoot.play()
         ObjectMaker.create_bullet(global_position + Vector2(0, -4))
         _cool = COOLDOWN
 

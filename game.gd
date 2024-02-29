@@ -8,9 +8,16 @@ var _lives = 3
 var _level_complete: bool = false
 
 @onready var lives = $lives
-@onready var audio = $audio
 @onready var wave_label = $wave_label
 @onready var camera = $camera
+
+@onready var ship_die = $ship_die
+@onready var game_over = $game_over
+@onready var level_start = $level_start
+@onready var level_music = $level_music
+@onready var boss_music = $boss_music
+@onready var boss_spawn = $boss_spawn
+
 
 func _ready():
     spawn_ship()
@@ -20,13 +27,16 @@ func _ready():
     SignalManager.level_complete.connect(complete_level)
 
 func player_died():
-    audio.play()
+    ship_die.play()
+    level_music.stop()
+    boss_music.stop()
     camera.shake(10, 0.5, 100)
     if _lives:
         respawn_ship()
     else:
         wave_label.visible = true
         wave_label.set_text("game over")
+        game_over.play()
         
 func respawn_ship():
     _lives -= 1
@@ -39,6 +49,7 @@ func check_level_complete():
     
     
 func start_play(level):
+    level_start.play()
     wave_label.set_text("wave %d" % level)
     await get_tree().create_timer(1).timeout
     var level_string = "res://levels/level_%s.tscn" % level
@@ -47,6 +58,7 @@ func start_play(level):
     wave_label.visible = false
     await get_tree().create_timer(1).timeout
     SignalManager.begin_play.emit()
+    level_music.play()
     
 func start_boss():
     wave_label.set_text("wave")
@@ -58,17 +70,19 @@ func start_boss():
     wave_label.set_text("wave...")
     await get_tree().create_timer(0.5).timeout
     wave_label.set_text("wave... boss!!!")
+    boss_spawn.play()
     camera.shake(4, 2, 3)
     add_child(load("res://levels/level_boss.tscn").instantiate())
     await get_tree().create_timer(1).timeout
     wave_label.visible = false
+    boss_music.play()
     await get_tree().create_timer(1).timeout
     SignalManager.begin_play.emit()
     
 func start_level():
     if _level:
         _level.queue_free()
-        remove_bullets()
+        remove_bullets() 
         
     _level_complete = false
     wave_label.visible = true
@@ -91,8 +105,10 @@ func spawn_ship():
     lives.set_lives(_lives)
     
 func complete_level():
+    boss_music.stop()
     _level_complete = true
     _current_level += 1
     await get_tree().create_timer(1).timeout
     start_level()
+    level_music.stop()
     
