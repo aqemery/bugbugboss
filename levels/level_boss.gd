@@ -14,10 +14,5 @@ func _ready():
     
 func update_health_bar():
     var _current = health.size.x
-    print("health: ", boss.health)
-    print("_boss_max: ", _boss_max)
-    print("_max: ", _max)
-    print("boss.health / _boss_max: ", boss.health / _boss_max)
     var _new = (boss.health / _boss_max) * _max
     health.size.x = _new
-    print("Health: ", health.size.x)

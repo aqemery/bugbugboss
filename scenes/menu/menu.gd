@@ -15,12 +15,10 @@ func _input(event):
         
    
 func close():
-    print("close")
     SignalManager.start_game.emit()
 
 
 func _on_animation_player_animation_finished(anim_name):
     if anim_name == "start_play":
-        print("close")
         SignalManager.start_game.emit()
         

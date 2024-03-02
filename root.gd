@@ -15,13 +15,11 @@ func clear_scene():
         _scene.queue_free()
 
 func show_menu():
-    print("show!")
     clear_scene()
     _scene = MENU.instantiate()
     add_child(_scene)
     
 func play_game():
-    print("play!")
     clear_scene()
     _scene = GAME.instantiate()
     add_child(_scene)
