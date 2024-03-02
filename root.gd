@@ -24,4 +24,9 @@ func play_game():
     _scene = GAME.instantiate()
     add_child(_scene)
     
+func _input(event):
+    if event.is_action_pressed("pause"):
+        _scene.can_process()
+        get_tree().paused = not get_tree().paused 
+    
     

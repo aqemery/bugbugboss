@@ -15,7 +15,7 @@ func _physics_process(delta):
     position.x += move * SPEED * delta
     _cool -= delta
     keep_onscreen()
-    if Input.is_action_pressed("ui_up"):
+    if Input.is_action_pressed("fire"):
         fire()
 
 func keep_onscreen():

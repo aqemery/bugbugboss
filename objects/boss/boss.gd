@@ -29,12 +29,12 @@ func start_loop():
     
 func move_right():
     _animator = animator.create(self)
-    _animator.fly(Vector2(118, 10), 1)
+    _animator.fly(Vector2(118, 14), 1)
     _animator.callback(start_loop)
 
 func move_left():
     _animator = animator.create(self)
-    _animator.fly(Vector2(10, 10), 1)
+    _animator.fly(Vector2(10, 14), 1)
     _animator.callback(start_loop)
 
 func move_center():
@@ -50,12 +50,12 @@ func fire_slime():
 
 func lay_mines():
     _animator = animator.create(self)
-    _animator.fly(Vector2(10, 10), 1)
+    _animator.fly(Vector2(10, 14), 1)
     _animator.callback(drop_mines)
 
 func drop_mines():
     _animator = animator.create(self)
-    _animator.fly(Vector2(118, 10), 2)
+    _animator.fly(Vector2(118, 14), 2)
     _animator.callback(start_loop)
     for i in range(0, 12):
         if [true, false].pick_random():
@@ -66,7 +66,7 @@ func fire_plasma():
     _animator = animator.create(self)
     _animator.fly(Vector2(30, 30), 0.5)
     _animator.fly(Vector2(60, 20), 0.5)
-    _animator.fly(Vector2(100, 10), 0.5)
+    _animator.fly(Vector2(100, 14), 0.5)
     _animator.callback(start_loop)
 
     for i in range(0, 3):

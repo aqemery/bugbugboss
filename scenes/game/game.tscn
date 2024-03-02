@@ -14,6 +14,7 @@
 [ext_resource type="LabelSettings" uid="uid://ei4t8rcst2af" path="res://objects/wave_label/wave_label.tres" id="12_0cl1d"]
 
 [node name="game" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_sa5sg")
 
 [node name="lives" parent="." instance=ExtResource("2_gdurv")]
