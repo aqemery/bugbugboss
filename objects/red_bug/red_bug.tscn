@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bd658v5mtnrhf" path="res://objects/bug/bug.tscn" id="1_vujxi"]
 [ext_resource type="Script" path="res://objects/red_bug/red_bug.gd" id="2_qwc07"]
-[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://bugbugboss.png" id="3_oyxxy"]
+[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://assets/bugbugboss.png" id="3_oyxxy"]
 [ext_resource type="AudioStream" uid="uid://bxxoelins5j3r" path="res://sounds/red_shoot.wav" id="4_hw6j1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1yrbq"]

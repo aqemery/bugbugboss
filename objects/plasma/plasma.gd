@@ -5,6 +5,7 @@ var _sx = 0
 
 func _ready():
     _speed = 30.0
+    _life_span = 5.0
     _sx = position.x
     
 func _physics_process(delta):

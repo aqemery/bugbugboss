@@ -1,30 +1,30 @@
 [gd_scene load_steps=10 format=3 uid="uid://cpmnxy1oagcj2"]
 
-[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://bugbugboss.png" id="1_x7r5a"]
+[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://assets/bugbugboss.png" id="1_4r4lj"]
 [ext_resource type="Script" path="res://objects/splat/splat.gd" id="2_eunq6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0ae2"]
-atlas = ExtResource("1_x7r5a")
+atlas = ExtResource("1_4r4lj")
 region = Rect2(48, 8, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qkrmc"]
-atlas = ExtResource("1_x7r5a")
+atlas = ExtResource("1_4r4lj")
 region = Rect2(56, 8, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1h7pe"]
-atlas = ExtResource("1_x7r5a")
+atlas = ExtResource("1_4r4lj")
 region = Rect2(64, 8, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8bvt"]
-atlas = ExtResource("1_x7r5a")
+atlas = ExtResource("1_4r4lj")
 region = Rect2(48, 16, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mj1is"]
-atlas = ExtResource("1_x7r5a")
+atlas = ExtResource("1_4r4lj")
 region = Rect2(56, 16, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bg3ya"]
-atlas = ExtResource("1_x7r5a")
+atlas = ExtResource("1_4r4lj")
 region = Rect2(64, 16, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q542m"]

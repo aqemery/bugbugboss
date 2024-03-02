@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ei4t8rcst2af"]
+
+[ext_resource type="FontFile" uid="uid://c7prf5lbhb541" path="res://assets/pico-8.ttf" id="1_66at3"]
+
+[resource]
+font = ExtResource("1_66at3")
+font_size = 6

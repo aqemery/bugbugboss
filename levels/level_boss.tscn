@@ -6,5 +6,20 @@
 [node name="level_boss" type="Node2D"]
 script = ExtResource("1_j77we")
 
-[node name="boss" parent="." instance=ExtResource("1_j2ba4")]
+[node name="boss" parent="." groups=["bug"] instance=ExtResource("1_j2ba4")]
 position = Vector2(96, 160)
+
+[node name="health_bar" type="ColorRect" parent="."]
+z_index = 1
+offset_left = 16.0
+offset_top = 2.0
+offset_right = 110.0
+offset_bottom = 6.0
+color = Color(0.364706, 0.341176, 0.309804, 1)
+
+[node name="health" type="ColorRect" parent="health_bar"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 93.0
+offset_bottom = 3.0
+color = Color(0.886275, 0.239216, 0.298039, 1)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b0vivdya4suuf"]
 
 [ext_resource type="Script" path="res://objects/ship/ship.gd" id="1_fj8p4"]
-[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://bugbugboss.png" id="1_i53kt"]
+[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://assets/bugbugboss.png" id="1_i53kt"]
 [ext_resource type="AudioStream" uid="uid://bh2srgfyoo8fe" path="res://sounds/ship_shoot.wav" id="3_5vuex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7eo8"]

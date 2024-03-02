@@ -5,8 +5,8 @@ func set_lives(num):
         c.queue_free()
     for i in range(num):
         var s = Sprite2D.new()
-        s.texture = load("res://bugbugboss.png")
+        s.texture = load("res://assets/bugbugboss.png")
         s.region_enabled = true
         s.region_rect = Rect2(40, 8, 3, 4)
-        s.global_position = Vector2(4 * i + 1.5, 2)
+        s.global_position = Vector2(4 * i + 4, 4)
         add_child(s)

@@ -2,7 +2,7 @@ extends Node2D
 
 var ship_scene = preload ("res://objects/ship/ship.tscn")
 var _ship: Area2D
-var _current_level = 10
+var _current_level = 1
 var _level: Node2D
 var _lives = 3
 var _level_complete: bool = false
@@ -17,6 +17,7 @@ var _level_complete: bool = false
 @onready var level_music = $level_music
 @onready var boss_music = $boss_music
 @onready var boss_spawn = $boss_spawn
+@onready var victory_music = $victory_music
 
 
 func _ready():
@@ -25,8 +26,21 @@ func _ready():
     SignalManager.enemy_dies.connect(check_level_complete)
     SignalManager.ship_dies.connect(player_died)
     SignalManager.level_complete.connect(complete_level)
+    SignalManager.victory.connect(victory)
+
+
+func set_hits(value):
+    for bug in get_tree().get_nodes_in_group('bug'):
+        bug.monitoring = value
+    for ship in get_tree().get_nodes_in_group('ship'):
+        ship.monitoring = value
+        
+        
+    
+    
 
 func player_died():
+    set_hits(false)
     ship_die.play()
     level_music.stop()
     boss_music.stop()
@@ -37,6 +51,8 @@ func player_died():
         wave_label.visible = true
         wave_label.set_text("game over")
         game_over.play()
+        await get_tree().create_timer(4).timeout
+        SignalManager.main_menu.emit()
         
 func respawn_ship():
     _lives -= 1
@@ -46,7 +62,6 @@ func respawn_ship():
 
 func check_level_complete():
     camera.shake(4, 0.5, 50)
-    
     
 func start_play(level):
     level_start.play()
@@ -58,6 +73,7 @@ func start_play(level):
     wave_label.visible = false
     await get_tree().create_timer(1).timeout
     SignalManager.begin_play.emit()
+    set_hits(true)
     level_music.play()
     
 func start_boss():
@@ -72,7 +88,8 @@ func start_boss():
     wave_label.set_text("wave... boss!!!")
     boss_spawn.play()
     camera.shake(4, 2, 3)
-    add_child(load("res://levels/level_boss.tscn").instantiate())
+    _level = load("res://levels/level_boss.tscn").instantiate()
+    add_child(_level)
     await get_tree().create_timer(1).timeout
     wave_label.visible = false
     boss_music.play()
@@ -82,21 +99,19 @@ func start_boss():
 func start_level():
     if _level:
         _level.queue_free()
-        remove_bullets() 
+        remove_bullets()
         
     _level_complete = false
     wave_label.visible = true
-
     
     if _current_level == 10:
         start_boss()
     else:
         start_play(_current_level)
 
-
 func remove_bullets():
     get_tree().call_group('bullet', 'queue_free')
-
+    get_tree().call_group('bug', 'queue_free')
 
 func spawn_ship():
     _ship = ship_scene.instantiate()
@@ -105,6 +120,7 @@ func spawn_ship():
     lives.set_lives(_lives)
     
 func complete_level():
+    set_hits(false)
     boss_music.stop()
     _level_complete = true
     _current_level += 1
@@ -112,3 +128,40 @@ func complete_level():
     start_level()
     level_music.stop()
     
+func victory():
+    boss_music.stop()
+    await get_tree().create_timer(1).timeout
+    _level.queue_free()
+    victory_music.play()
+    wave_label.set_text("victory!!!")
+    wave_label.visible = true
+
+    await get_tree().create_timer(1).timeout
+    var t: Animator = animator.create(wave_label)
+    t.fly(Vector2(0, -40), 1)
+    await get_tree().create_timer(1).timeout
+    $message.visible = true
+    var shown = ""
+    $message.text = shown
+    
+    var message = "you have saved the galaxy
+from certain doom by the
+the swarms of evil bugs!
+and their big evil boss!"
+
+    for c in message:
+        shown += c
+        $message.text = shown
+        await get_tree().create_timer(.05).timeout
+        
+    for c in "\n\n\ngood job.":
+        shown += c
+        $message.text = shown
+        await get_tree().create_timer(.3).timeout
+    await get_tree().create_timer(2).timeout
+    SignalManager.main_menu.emit()
+
+
+    
+    
+

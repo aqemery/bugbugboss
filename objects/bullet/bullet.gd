@@ -3,7 +3,7 @@ class_name Bullet
 
 var _direction = Vector2.UP
 var _speed = 100.0
-var _life_span: float = 20.0
+var _life_span: float = 2.0
 var _life_time: float = 0.0
 
 func _physics_process(delta):
@@ -14,3 +14,5 @@ func _physics_process(delta):
 
 func _on_area_entered(_area):
     queue_free()
+
+

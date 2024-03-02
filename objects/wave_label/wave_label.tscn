@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ditaic0utel4p"]
+[gd_scene load_steps=3 format=3 uid="uid://ditaic0utel4p"]
 
 [ext_resource type="Script" path="res://objects/wave_label/wave_label.gd" id="1_c8v8v"]
-[ext_resource type="FontFile" uid="uid://c7prf5lbhb541" path="res://pico-8.ttf" id="1_kxj4j"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_7546y"]
-font = ExtResource("1_kxj4j")
-font_size = 6
+[ext_resource type="LabelSettings" uid="uid://ei4t8rcst2af" path="res://objects/wave_label/wave_label.tres" id="2_cg0bw"]
 
 [node name="wave_label" type="Control"]
 layout_mode = 3
@@ -27,4 +23,4 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
 text = "wave 1"
-label_settings = SubResource("LabelSettings_7546y")
+label_settings = ExtResource("2_cg0bw")

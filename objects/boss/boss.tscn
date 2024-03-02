@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dwfb8gs0qj4mt"]
 
-[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://bugbugboss.png" id="1_hiffy"]
+[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://assets/bugbugboss.png" id="1_hiffy"]
 [ext_resource type="Script" path="res://objects/boss/boss.gd" id="1_mw1rr"]
 [ext_resource type="AudioStream" uid="uid://cpvnnspbp3k30" path="res://sounds/boss_hit.wav" id="3_ofkm2"]
 [ext_resource type="AudioStream" uid="uid://drv367ohrhll7" path="res://sounds/boss_die.wav" id="4_huo7t"]

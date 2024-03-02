@@ -7,6 +7,8 @@ var last_called
 @onready var hit = $hit
 @onready var die = $die
 
+signal health_changed
+
 func _ready():
     animate_intro()
 
@@ -51,7 +53,6 @@ func lay_mines():
     _animator.fly(Vector2(10, 10), 1)
     _animator.callback(drop_mines)
 
-
 func drop_mines():
     _animator = animator.create(self)
     _animator.fly(Vector2(118, 10), 2)
@@ -60,9 +61,6 @@ func drop_mines():
         if [true, false].pick_random():
             ObjectMaker.create_slime_ball(global_position)
         await get_tree().create_timer(0.15).timeout
-    
-
-
 
 func fire_plasma():
     _animator = animator.create(self)
@@ -74,10 +72,6 @@ func fire_plasma():
     for i in range(0, 3):
         await get_tree().create_timer(0.5).timeout
         ObjectMaker.create_plasma(global_position)
-        
-    
-
-    pass
 
 func _fire_at_player():
     var player = get_tree().get_first_node_in_group("ship")
@@ -87,6 +81,7 @@ func _fire_at_player():
 
 func _on_area_entered(_area):
     health -= 1
+    health_changed.emit()
     if health <= 0:
         ObjectMaker.create_splat(global_position + Vector2(4, -4))
         ObjectMaker.create_splat(global_position + Vector2( - 4, -4))
@@ -100,8 +95,10 @@ func _on_area_entered(_area):
         $CollisionShape2D.queue_free()
         $AnimatedSprite2D.queue_free()
         die.play()
+        SignalManager.victory.emit()
     else:
         hit.play()
 
 func _on_die_finished():
     queue_free()
+    

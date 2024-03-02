@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://c537crflhheat"]
+
+[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://assets/bugbugboss.png" id="1_3m3q8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghsur"]
+atlas = ExtResource("1_3m3q8")
+region = Rect2(0, 32, 40, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpeku"]
+atlas = ExtResource("1_3m3q8")
+region = Rect2(0, 48, 40, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22cll"]
+atlas = ExtResource("1_3m3q8")
+region = Rect2(0, 64, 40, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47xv1"]
+atlas = ExtResource("1_3m3q8")
+region = Rect2(40, 64, 40, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7be8b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghsur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpeku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22cll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47xv1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bug_animation" type="AnimatedSprite2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+sprite_frames = SubResource("SpriteFrames_7be8b")
+centered = false

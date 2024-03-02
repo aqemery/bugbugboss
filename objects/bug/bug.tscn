@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bd658v5mtnrhf"]
 
 [ext_resource type="Script" path="res://objects/bug/bug.gd" id="1_7o60m"]
-[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://bugbugboss.png" id="1_epsbl"]
+[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://assets/bugbugboss.png" id="1_epsbl"]
 [ext_resource type="AudioStream" uid="uid://7rdft6mkgfyl" path="res://sounds/bug_shoot.wav" id="3_m227h"]
 [ext_resource type="AudioStream" uid="uid://1xafhwnjw0gm" path="res://sounds/bug_die.wav" id="4_fj4i2"]
 

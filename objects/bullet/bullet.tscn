@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5buqakegq8js"]
 
 [ext_resource type="Script" path="res://objects/bullet/bullet.gd" id="1_el52x"]
-[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://bugbugboss.png" id="1_fqpv6"]
+[ext_resource type="Texture2D" uid="uid://d22q30ydfsxpp" path="res://assets/bugbugboss.png" id="2_5qjlj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d3ues"]
 radius = 2.0
@@ -12,7 +12,7 @@ collision_mask = 2
 script = ExtResource("1_el52x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_fqpv6")
+texture = ExtResource("2_5qjlj")
 region_enabled = true
 region_rect = Rect2(24, 0, 1, 5)
 
@@ -20,3 +20,4 @@ region_rect = Rect2(24, 0, 1, 5)
 shape = SubResource("CircleShape2D_d3ues")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
